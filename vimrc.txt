@@ -1,0 +1,39 @@
+call plug#begin('~/.vim/plugged')
+Plug 'octol/vim-cpp-enhanced-highlight'
+call plug#end()
+
+" Live update lyour vimrc on write!!!
+augroup reload_vimrc
+autocmd!
+autocmd BufWritePost $MYVIMRC source $MYVIMRC
+augroup END
+
+
+set t_Co=256
+set number
+
+syntax enable
+colorscheme sidonia
+
+hi Function ctermfg = 118
+hi Type ctermfg = 99
+hi Conditional ctermfg=79
+hi Repeat ctermfg = 67
+hi MatchParen ctermfg=7 ctermbg=88
+hi String ctermfg=71
+
+
+set smartindent
+set smarttab
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set noexpandtab
+
+setlocal spell spelllang=en_us
+
+inoremap jj <Esc>:w<CR>
+inoremap qq <Esc>:wq<CR>
+nnoremap q :q<CR>
+nnoremap wq :wq<CR>
+nnoremap n $
